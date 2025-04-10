@@ -1,140 +1,297 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2822
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww37900\viewh21300\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu.to.go - Smart Electric Lunchbox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
 
-\f0\fs24 \cf0 npx create-react-app .\
-\
-npm install @material-ui/core axios redux react-redux react-router-dom styled-components\
-\
-import React from 'react';\
-import styled from 'styled-components';\
-\
-const ProductCard = styled.div`\
-  border: 1px solid #ddd;\
-  padding: 20px;\
-  margin: 15px;\
-  border-radius: 8px;\
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);\
-`;\
-\
-const Product = (\{ product \}) => \{\
-  return (\
-    <ProductCard>\
-      <img src=\{product.image\} alt=\{product.name\} />\
-      <h3>\{product.name\}</h3>\
-      <p>\{product.description\}</p>\
-      <p>Price: $\{product.price\}</p>\
-      <button onClick=\{() => handleAddToCart(product)\}>Add to Cart</button>\
-    </ProductCard>\
-  );\
-\};\
-\
-export default Product;\
-\
-\
-\
-import smtplib\
-from email.mime.text import MIMEText\
-from email.mime.multipart import MIMEMultipart\
-\
-class MarketingAutomation:\
-    def __init__(self):\
-        self.smtp_server = "smtp.gmail.com"\
-        self.port = 587\
-        self.sender_email = "your-email@gmail.com"\
-        \
-    def send_promotional_email(self, customer_list, campaign):\
-        message = MIMEMultipart()\
-        message["Subject"] = campaign["subject"]\
-        message["From"] = self.sender_email\
-        \
-        html_content = f"""\
-        <html>\
-            <body>\
-                <h2>\{campaign['header']\}</h2>\
-                <p>\{campaign['body']\}</p>\
-                <a href="\{campaign['cta_link']\}">Shop Now!</a>\
-            </body>\
-        </html>\
-        """\
-        \
-        message.attach(MIMEText(html_content, "html"))\
-        \
-        with smtplib.SMTP(self.smtp_server, self.port) as server:\
-            server.starttls()\
-            server.login(self.sender_email, "your-app-password")\
-            \
-            for customer in customer_list:\
-                message["To"] = customer["email"]\
-                server.send_message(message)\
-\
-\
-\
-import axios from 'axios';\
-\
-const BASE_URL = 'http://localhost:3000/api';\
-\
-export const orderApi = \{\
-  createOrder: async (orderData) => \{\
-    try \{\
-      const response = await axios.post(`$\{BASE_URL\}/orders`, orderData);\
-      return response.data;\
-    \} catch (error) \{\
-      throw new Error('Failed to create order');\
-    \}\
-  \},\
-  \
-  getOrders: async () => \{\
-    try \{\
-      const response = await axios.get(`$\{BASE_URL\}/orders`);\
-      return response.data;\
-    \} catch (error) \{\
-      throw new Error('Failed to fetch orders');\
-    \}\
-  \}\
-\};\
-\
-\
-\
-import React, \{ useState, useEffect \} from 'react';\
-import \{ Line \} from 'react-chartjs-2';\
-\
-const Analytics = () => \{\
-  const [salesData, setSalesData] = useState(\{\});\
-  \
-  useEffect(() => \{\
-    // Fetch analytics data\
-    fetchAnalyticsData();\
-  \}, []);\
-\
-  const fetchAnalyticsData = async () => \{\
-    // Implement your data fetching logic here\
-  \};\
-\
-  return (\
-    <div>\
-      <h2>Sales Analytics</h2>\
-      <Line data=\{salesData\} />\
-      <div className="metrics-grid">\
-        <div className="metric-card">\
-          <h3>Total Sales</h3>\
-          <p>$\{salesData.totalSales\}</p>\
-        </div>\
-        <div className="metric-card">\
-          <h3>Conversion Rate</h3>\
-          <p>\{salesData.conversionRate\}%</p>\
-        </div>\
-      </div>\
-    </div>\
-  );\
-\};\
-\
-export default Analytics;\
-\
-\
-\
-\
-}
+        :root {
+            --primary-color: #FF9B42;
+            --text-color: #333333;
+            --bg-color: #FFFFFF;
+            --accent-blue: #00A3FF;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--bg-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(45deg, #FFF5EB, #FFFFFF);
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+
+        .hero img {
+            max-width: 80%;
+            height: auto;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #666;
+        }
+
+        .cta-button {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 0;
+            background: #FFFFFF;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Product Specs */
+        .specs {
+            background: #F9F9F9;
+            padding: 4rem 0;
+        }
+
+        .specs-list {
+            list-style: none;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .specs-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .specs-list li:before {
+            content: "✓";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Price Section */
+        .pricing {
+            padding: 4rem 0;
+            text-align: center;
+            background: linear-gradient(45deg, #FFF5EB, #FFFFFF);
+        }
+
+        .price-tag {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin: 2rem 0;
+        }
+
+        .price-features {
+            max-width: 500px;
+            margin: 2rem auto;
+            text-align: left;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 6rem 0 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Menu.to.go</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>The Smart Electric Lunchbox</h1>
+            <p>Experience warm, delicious meals anywhere with our revolutionary heated lunchbox</p>
+            <img src="lunchbox.jpg" alt="Menu.to.go Smart Electric Lunchbox" />
+            <a href="#pricing" class="cta-button">Order Now</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Smart Features for Modern Life</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Smart Temperature Control</h3>
+                    <p>Digital display with precise temperature settings for perfect meal warmth</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Long Battery Life</h3>
+                    <p>Enjoy multiple meals on a single charge with our efficient heating system</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Elegant Design</h3>
+                    <p>Modern minimalist aesthetic in white and orange that looks great anywhere</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Portable Solution</h3>
+                    <p>Lightweight and compact design perfect for office, school, or travel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="specs">
+        <div class="container">
+            <h2 class="section-title">Product Specifications</h2>
+            <ul class="specs-list">
+                <li>Advanced digital temperature control with LED display</li>
+                <li>Dual heating elements for even heat distribution</li>
+                <li>Premium food-grade materials for safety and durability</li>
+                <li>Compact size: Perfect for office or travel use</li>
+                <li>Battery capacity: Up to 3 hours of continuous heating</li>
+                <li>Easy-clean surface with detachable components</li>
+                <li>Temperature range: 20°C - 75°C (68°F - 167°F)</li>
+                <li>Smart overheat protection system</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Special Launch Offer</h2>
+            <div class="price-tag">$89.99</div>
+            <p>Limited Time Offer - Regular Price $119.99</p>
+            <div class="price-features">
+                <ul class="specs-list">
+                    <li>Free Premium Carrying Case</li>
+                    <li>2-Year Warranty</li>
+                    <li>30-Day Money-Back Guarantee</li>
+                    <li>Free Shipping Worldwide</li>
+                </ul>
+            </div>
+            <a href="#" class="cta-button">Buy Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>Contact Us</h3>
+                <p>Email: sales@menu.to.go</p>
+                <p>Support: support@menu.to.go</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <p>User Manual</p>
+                <p>Warranty Information</p>
+                <p>Shipping Policy</p>
+            </div>
+            <div>
+                <h3>Follow Us</h3>
+                <p>Instagram</p>
+                <p>Facebook</p>
+                <p>Twitter</p>
+            </div>
+        </div>
+        <div class="container">
+            <p style="margin-top: 2rem;">© 2024 Menu.to.go - Smart Electric Lunchbox. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
