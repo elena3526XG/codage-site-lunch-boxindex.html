@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu.to.go - Lunch Box Chauffante Intelligente</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #1E2832;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header et Logo */
+        .brand-title {
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            margin: 40px 0;
+            color: white;
+        }
+
+        /* Section Hero */
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .main-slogan {
+            font-size: 42px;
+            font-weight: bold;
+            margin: 20px 0;
+            line-height: 1.2;
+        }
+
+        .sub-slogan {
+            font-size: 24px;
+            margin: 20px 0;
+            color: #cccccc;
+        }
+
+        /* Cartes de Fonctionnalités */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 30px;
+            color: #2A9D8F;
+            margin-bottom: 15px;
+        }
+
+        /* Spécifications Techniques */
+        .specs {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .specs-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        .specs-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .specs-list li {
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            margin: 5px 0;
+        }
+
+        /* Section Prix */
+        .pricing {
+            text-align: center;
+            padding: 40px;
+            background: rgba(42, 157, 143, 0.1);
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .price-tag {
+            font-size: 48px;
+            color: #2A9D8F;
+            margin: 20px 0;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #cccccc;
+            font-size: 24px;
+        }
+
+        .promo-button {
+            background-color: #2A9D8F;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .promo-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Timer */
+        .timer {
+            background-color: #1a1a1a;
+            padding: 15px 30px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 20px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Bénéfices Émotionnels */
+        .benefits {
+            margin: 40px 0;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .footer-section h3 {
+            color: #2A9D8F;
+            margin-bottom: 20px;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 10px 0;
+        }
+
+        .footer-section a:hover {
+            color: #2A9D8F;
+        }
+
+        .social-icons {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .brand-title {
+                font-size: 36px;
+            }
+
+            .main-slogan {
+                font-size: 32px;
+            }
+
+            .sub-slogan {
+                font-size: 20px;
+            }
+
+            .specs-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Logo et Titre -->
+        <h1 class="brand-title">Menu To Go</h1>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h2 class="main-slogan">Chauffez vos repas partout,<br>à tout moment</h2>
+            <p class="sub-slogan">Pas de micro-ondes, pas de souci.<br>Juste une chaleur instantanée.</p>
+        </section>
+
+        <!-- Caractéristiques Principales -->
+        <section class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-temperature-high feature-icon"></i>
+                <h3>Contrôle de Température</h3>
+                <p>Écran digital avec réglages précis pour une chaleur optimale</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-battery-full feature-icon"></i>
+                <h3>Grande Autonomie</h3>
+                <p>Batterie 16 000 mAh pour une utilisation prolongée</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-box feature-icon"></i>
+                <h3>Solution Portable</h3>
+                <p>Design compact et léger pour tous vos déplacements</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt feature-icon"></i>
+                <h3>Matériaux Premium</h3>
+                <p>Plastique PP alimentaire et acier inoxydable 304</p>
+            </div>
+        </section>
+
+        <!-- Spécifications Techniques -->
+        <section class="specs">
+            <h2 class="specs-title">Caractéristiques Techniques</h2>
+            <ul class="specs-list">
+                <li>✓ Capacité : 1 000 ml</li>
+                <li>✓ Batterie : 16 000 mAh rechargeable</li>
+                <li>✓ Puissance : 40 W</li>
+                <li>✓ 5 durées de chauffage : 20-60 min</li>
+                <li>✓ Temps de charge : 6-8 heures</li>
+                <li>✓ Autonomie thermique : 5 heures</li>
+                <li>✓ Dimensions : 23,6 x 13,3 x 9,6 cm</li>
+                <li>✓ Poids : 1,3 kg</li>
+            </ul>
+        </section>
+
+        <!-- Bénéfices Émotionnels -->
+        <section class="benefits">
+            <div class="benefit-card">
+                <h3>🏢 Au Bureau</h3>
+                <p>"Offrez-vous un vrai moment de réconfort au bureau : un repas chaud, savoureux, sans courir après un micro-ondes."</p>
+            </div>
+            <div class="benefit-card">
+                <h3>🚗 En Déplacement</h3>
+                <p>"Sur la route, mais jamais privé de chaleur : savourez un vrai repas, chaud et complet, même en voiture."</p>
+            </div>
+            <div class="benefit-card">
+                <h3>💪 Après le Sport</h3>
+                <p>"Après l'effort, le vrai réconfort : rechargez votre corps avec un bon repas chaud, prêt en quelques minutes."</p>
+            </div>
+        </section>
+
+        <!-- Prix et Promo -->
+        <section class="pricing">
+            <h2>Offre Spéciale de Lancement</h2>
+            <div class="price-tag">89,99 €</div>
+            <p class="original-price">Prix normal : 119,99 €</p>
+            <ul class="specs-list">
+                <li>✓ Livraison gratuite</li>
+                <li>✓ Garantie 2 ans</li>
+                <li>✓ 30 jours satisfait ou remboursé</li>
+                <li>✓ Option 2 compartiments (+3,50USD)</li>
+            </ul>
+            <a href="#" class="promo-button">Profitez de -20% maintenant</a>
+            <div class="timer">02:18</div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email : contact@menu.to.go</p>
+                    <p>Support : support@menu.to.go</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Informations</h3>
+                    <a href="#">Mode d'emploi</a>
+                    <a href="#">Garantie</a>
+                    <a href="#">Livraison</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
