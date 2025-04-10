@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu.to.go - Lunch Box Chauffante</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #1E2832;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Logo et Titre */
+        .brand-title {
+            font-size: 48px;
+            font-weight: bold;
+            text-align: center;
+            margin: 40px 0;
+            color: white;
+        }
+
+        /* Slogan Principal */
+        .main-slogan {
+            font-size: 42px;
+            font-weight: bold;
+            margin: 20px 0;
+            line-height: 1.2;
+        }
+
+        .sub-slogan {
+            font-size: 24px;
+            margin: 20px 0;
+            color: #cccccc;
+        }
+
+        /* Images Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .main-image {
+            grid-column: span 2;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .side-image {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Étoiles Avis */
+        .rating {
+            color: #FFD700;
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        /* Bouton Promo */
+        .promo-button {
+            background-color: #2A9D8F;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin: 20px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .promo-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Timer */
+        .timer {
+            background-color: #1a1a1a;
+            padding: 15px 30px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 20px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Bénéfices Émotionnels */
+        .benefits {
+            margin: 40px 0;
+            text-align: left;
+        }
+
+        .benefit-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .benefit-title {
+            font-size: 24px;
+            color: #2A9D8F;
+            margin-bottom: 10px;
+        }
+
+        .benefit-text {
+            font-size: 18px;
+            color: #cccccc;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .brand-title {
+                font-size: 36px;
+            }
+
+            .main-slogan {
+                font-size: 32px;
+            }
+
+            .sub-slogan {
+                font-size: 20px;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main-image {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Logo et Titre -->
+        <h1 class="brand-title">Menu To Go</h1>
+
+        <!-- Slogan Principal -->
+        <h2 class="main-slogan">Chauffez vos repas partout,<br>à tout moment</h2>
+        <p class="sub-slogan">Pas de micro-ondes, pas de souci.<br>Juste une chaleur instantanée.</p>
+
+        <!-- Images -->
+        <div class="image-grid">
+            <img src="menu-to-go-marketing.jpg" alt="Menu.to.go en utilisation professionnelle" class="main-image">
+        </div>
+
+        <!-- Étoiles et Avis -->
+        <div class="rating">
+            ⭐⭐⭐⭐⭐
+            <p>Avis clients satisfaits</p>
+        </div>
+
+        <!-- Bénéfices Émotionnels -->
+        <div class="benefits">
+            <div class="benefit-card">
+                <h3 class="benefit-title">🏢 Au Bureau</h3>
+                <p class="benefit-text">"Offrez-vous un vrai moment de réconfort au bureau : un repas chaud, savoureux, sans courir après un micro-ondes."</p>
+            </div>
+
+            <div class="benefit-card">
+                <h3 class="benefit-title">🚗 En Déplacement</h3>
+                <p class="benefit-text">"Sur la route, mais jamais privé de chaleur : savourez un vrai repas, chaud et complet, même en voiture."</p>
+            </div>
+
+            <div class="benefit-card">
+                <h3 class="benefit-title">💪 Après le Sport</h3>
+                <p class="benefit-text">"Après l'effort, le vrai réconfort : rechargez votre corps avec un bon repas chaud, prêt en quelques minutes, où que vous soyez."</p>
+            </div>
+
+            <div class="benefit-card">
+                <h3 class="benefit-title">🌱 Mode de Vie Sain</h3>
+                <p class="benefit-text">"Restez aligné avec votre mode de vie, où que vous soyez. Ne laissez plus les contraintes extérieures compromettre vos habitudes alimentaires."</p>
+            </div>
+        </div>
+
+        <!-- Bouton Promo -->
+        <a href="#" class="promo-button">Profitez de -20% maintenant</a>
+
+        <!-- Timer -->
+        <div class="timer">02:18</div>
+    </div>
+</body>
+</html>
