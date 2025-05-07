@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clarity One — Lave-Vitre Automatique Haut de Gamme</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #f9f9f9;
+      color: #222;
+    }
+    header {
+      background-color: #ffffff;
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+    section.hero {
+      padding: 4rem 2rem;
+      text-align: center;
+      background-color: #ffffff;
+    }
+    section.hero img {
+      max-width: 300px;
+      margin: 2rem auto;
+      display: block;
+    }
+    section.hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    section.hero p {
+      font-size: 1.1rem;
+      color: #444;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    section.features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 4rem 2rem;
+      background-color: #f0f0f0;
+    }
+    .feature {
+      width: 300px;
+      margin: 1rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .feature h3 {
+      margin-bottom: 0.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #ffffff;
+      border-top: 1px solid #eee;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Clarity One</h1>
+    <p>Le lave-vitre automatique qui redéfinit la perfection</p>
+  </header>
+
+  <section class="hero">
+    <img src="Capture d’écran 2025-05-07 à 21.05.32.png" alt="Lave-vitre automatique Clarity One">
+    <h2>Clarté. Élégance. Simplicité.</h2>
+    <p>Offrez à vos vitres un éclat sans effort avec Clarity One, le lave-vitre intelligent conçu pour ceux qui exigent l’excellence jusque dans les moindres détails.</p>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h3>✨ Nettoyage Sans Trace</h3>
+      <p>Des vitres parfaites à chaque passage, pour une transparence absolue et une lumière pure dans votre intérieur.</p>
+    </div>
+    <div class="feature">
+      <h3>🤖 Technologie Intelligente</h3>
+      <p>Navigation autonome, capteurs anti-chute, et retour automatique : la technologie qui travaille pendant que vous vivez.</p>
+    </div>
+    <div class="feature">
+      <h3>⏳ Gagnez du Temps</h3>
+      <p>Fini les heures perdues à frotter. Clarity One s’occupe de tout, en silence, pendant que vous vous concentrez sur l’essentiel.</p>
+    </div>
+    <div class="feature">
+      <h3>🧠 Sérénité Quotidienne</h3>
+      <p>Un intérieur lumineux, des surfaces impeccables, et un esprit allégé. Ce n’est pas juste du nettoyage, c’est du bien-être.</p>
+    </div>
+    <div class="feature">
+      <h3>🏡 Élégance Discrète</h3>
+      <p>Design épuré, finitions haut de gamme. Clarity One s’intègre naturellement à votre environnement sans l’encombrer.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Clarity One. L’innovation au service de votre lumière.</p>
+  </footer>
+</body>
+</html>
